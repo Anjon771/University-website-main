@@ -1,0 +1,14 @@
+{
+  "name": "university-website",
+  "version": "1.0.0",
+  "description": "University Website showcasing courses, global campuses, facilities, and student testimonials.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "echo 'Static site build complete'",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

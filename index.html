@@ -5,191 +5,594 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University Website</title>
+    <meta name="description" content="University Website showcasing courses, global campuses, facilities, and student testimonials.">
+    <meta property="og:title" content="University Website">
+    <meta property="og:description" content="University Website showcasing courses, global campuses, facilities, and student testimonials.">
 
-    <!-- google font link -->
+    <!-- Google Fonts: Cormorant Garamond (Display), Plus Jakarta Sans (Body), JetBrains Mono (Tabular Data) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- font awesome link -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- custom css file link -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <!-- Header Section -->
-    <section class="header">
-        <!-- navigation section -->
-        <nav>
-            <a href="index.html"><img src="./assets/images/logo.png" alt=""></a>
-            <div class="nav-links" id="navLinks">
-                <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+    <!-- Top Bar Contract: Zone 1 (Single Text Brand) | Zone 2 (5 Nav Links) | Zone 3 (1 Primary Action) -->
+    <header class="site-header" id="top">
+        <div class="nav-container">
+            <a href="#top" class="brand-wordmark">Eduford University</a>
+
+            <nav class="nav-links" id="navLinks" aria-label="Primary Navigation">
+                <button class="mobile-close-btn" id="closeMenuBtn" aria-label="Close navigation menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
                 <ul>
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">ABOUT</a></li>
-                    <li><a href="">COURSE</a></li>
-                    <li><a href="">BLOG</a></li>
-                    <li><a href="">CONTACT</a></li>
+                    <li><a href="#programs" class="nav-link">Programs</a></li>
+                    <li><a href="#campuses" class="nav-link">Campuses</a></li>
+                    <li><a href="#facilities" class="nav-link">Facilities</a></li>
+                    <li><a href="#outcomes" class="nav-link">Outcomes</a></li>
+                    <li><a href="#admissions" class="nav-link">Admissions</a></li>
                 </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#admissions" class="btn-primary-nav">Apply for Fall 2026</a>
+                <button class="mobile-menu-btn" id="openMenuBtn" aria-label="Open navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
-            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
-        </nav>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-media">
+            <img src="./assets/images/banner.png" alt="Eduford University historic quadrangle and main academic hall" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+            <div class="hero-scrim"></div>
+        </div>
 
-        <!-- hero section -->
-        <div class="text-box">
-            <h1>World's Biggest University</h1>
-            <p>Making website is now of the Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam adipisci
-                repellendus officia, <br>porro in unde optio! Quo iste nostrum harum.</p>
-            <a href="" class="hero-btn">Visit Us To know More</a>
+        <div class="hero-content">
+            <p class="editorial-kicker">Chartered 1889 · Global Research Institution · London · New York · Washington</p>
+            <h1>Where Rigorous Inquiry Shapes Global Leadership</h1>
+            <p class="hero-lead">
+                Across three world capitals and twelve interdisciplinary faculties, Eduford University unites classical scholarship with frontier scientific research to prepare graduates for complex civic and technical challenges.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#programs" class="btn-hero-primary">Explore Academic Catalog</a>
+                <a href="#campuses" class="btn-hero-secondary">Schedule Campus Visit</a>
+            </div>
+        </div>
+
+        <!-- Operational Utility Ribbon -->
+        <div class="utility-ribbon">
+            <div class="utility-container">
+                <div class="utility-item">
+                    <span class="utility-label">Admissions Cycle</span>
+                    <span class="utility-value">Fall 2026 Early Action · Nov 15, 2026</span>
+                </div>
+                <span class="utility-divider" aria-hidden="true">·</span>
+                <div class="utility-item">
+                    <span class="utility-label">Campus Tours</span>
+                    <span class="utility-value">Daily 09:30 &amp; 14:00 Local Time</span>
+                </div>
+                <span class="utility-divider" aria-hidden="true">·</span>
+                <div class="utility-item">
+                    <span class="utility-label">Undergraduate Aid</span>
+                    <span class="utility-value">100% Demonstrated Need Met</span>
+                </div>
+                <a href="#admissions" class="utility-link">Download 2026 Prospectus &rarr;</a>
+            </div>
         </div>
     </section>
 
+    <!-- Main Content -->
+    <main>
+        <!-- Academic Programs Section (Courses We Offer) -->
+        <section class="section-block programs-section" id="programs">
+            <div class="container">
+                <div class="section-header-split">
+                    <div>
+                        <p class="section-kicker">01 / Academic Architecture</p>
+                        <h2 class="section-title">Degrees &amp; Curricular Pathways</h2>
+                        <p class="section-subtitle">
+                            Structured around small-group tutorials and empirical laboratory research, our programs bridge foundational theory with real-world execution.
+                        </p>
+                    </div>
 
+                    <!-- Interactive Filter Controls (Functional Buttons) -->
+                    <div class="filter-tabs" role="tablist" aria-label="Filter academic programs by level">
+                        <button type="button" class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All Pathways</button>
+                        <button type="button" class="filter-tab" data-filter="foundation" role="tab" aria-selected="false">Foundation</button>
+                        <button type="button" class="filter-tab" data-filter="undergraduate" role="tab" aria-selected="false">Undergraduate</button>
+                        <button type="button" class="filter-tab" data-filter="postgraduate" role="tab" aria-selected="false">Postgraduate</button>
+                    </div>
+                </div>
 
-    <!-- courses section  -->
+                <!-- Asymmetric Editorial Program Grid -->
+                <div class="programs-grid" id="programsGrid">
+                    <article class="program-card featured-program" data-category="undergraduate" data-program-id="degree">
+                        <div class="program-card-top">
+                            <p class="program-meta">01. Honours Undergraduate · 3–4 Years Full-Time · London, New York &amp; Washington</p>
+                            <h3>Bachelor of Arts &amp; Bachelor of Science Honours</h3>
+                            <p class="program-description">
+                                Deep disciplinary specialization paired with cross-faculty seminars in quantitative reasoning, ethics, and thesis research. Students work directly with senior faculty fellows from their first term.
+                            </p>
+                        </div>
+                        <div class="program-card-metrics">
+                            <div class="metric-cell">
+                                <span class="metric-num">42</span>
+                                <span class="metric-label">Honours Majors</span>
+                            </div>
+                            <div class="metric-cell">
+                                <span class="metric-num">8:1</span>
+                                <span class="metric-label">Tutorial Ratio</span>
+                            </div>
+                            <div class="metric-cell">
+                                <span class="metric-num">96.4%</span>
+                                <span class="metric-label">6-Mo Outcome</span>
+                            </div>
+                        </div>
+                        <div class="program-card-footer">
+                            <span class="program-departments">Economics · Computer Science · Architecture · Jurisprudence · Bioengineering</span>
+                            <button type="button" class="btn-text-action open-program-modal" data-program="degree">
+                                Inspect Curriculum &amp; Tuition &rarr;
+                            </button>
+                        </div>
+                    </article>
 
-    <section class="course">
-        <h1>Courses We Offer</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <article class="program-card" data-category="foundation" data-program-id="intermediate">
+                        <div class="program-card-top">
+                            <p class="program-meta">02. Pre-University &amp; Visiting · 1 Year Intensive · London &amp; New York</p>
+                            <h3>Foundation &amp; Intermediate Fellows Program</h3>
+                            <p class="program-description">
+                                Rigorous academic preparation for international scholars transitioning to honours degree curricula, featuring intensive seminar writing, calculus, and laboratory methods.
+                            </p>
+                        </div>
+                        <div class="program-card-metrics">
+                            <div class="metric-cell">
+                                <span class="metric-num">36</span>
+                                <span class="metric-label">Credit Units</span>
+                            </div>
+                            <div class="metric-cell">
+                                <span class="metric-num">94%</span>
+                                <span class="metric-label">Honours Progression</span>
+                            </div>
+                        </div>
+                        <div class="program-card-footer">
+                            <span class="program-departments">STEM Bridge · Humanities Core · Quantitative Methods</span>
+                            <button type="button" class="btn-text-action open-program-modal" data-program="intermediate">
+                                Inspect Curriculum &amp; Tuition &rarr;
+                            </button>
+                        </div>
+                    </article>
 
-        <div class="row">
-            <div class="course-col">
-                <h3>Intermediate</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas exercitationem sapiente voluptatum
-                    tenetur sint neque laboriosam possimus assumenda alias nam?</p>
-            </div>
-            <div class="course-col">
-                <h3>Degree</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas exercitationem sapiente voluptatum
-                    tenetur sint neque laboriosam possimus assumenda alias nam?</p>
-            </div>
-            <div class="course-col">
-                <h3>Post Graduation</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas exercitationem sapiente voluptatum
-                    tenetur sint neque laboriosam possimus assumenda alias nam?</p>
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <!-- campus section -->
-
-    <section class="campus">
-        <h1>Courses We Offer</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-
-        <div class="row">
-            <div class="campus-col">
-                <img src="./assets/images/london.png" alt="">
-                <div class="layer">
-                    <h3>LONDON</h3>
+                    <article class="program-card" data-category="postgraduate" data-program-id="postgrad">
+                        <div class="program-card-top">
+                            <p class="program-meta">03. Graduate &amp; Doctoral · 1–5 Years · All Global Campuses</p>
+                            <h3>Postgraduate Master’s &amp; Doctoral Research</h3>
+                            <p class="program-description">
+                                Advanced research fellowships, taught master’s degrees, and fully funded Ph.D. tracks tackling climate resilience, algorithmic systems, and international public policy.
+                            </p>
+                        </div>
+                        <div class="program-card-metrics">
+                            <div class="metric-cell">
+                                <span class="metric-num">$148M</span>
+                                <span class="metric-label">Annual Grant Funding</span>
+                            </div>
+                            <div class="metric-cell">
+                                <span class="metric-num">100%</span>
+                                <span class="metric-label">Ph.D. Stipend Coverage</span>
+                            </div>
+                        </div>
+                        <div class="program-card-footer">
+                            <span class="program-departments">M.Sc. Data Systems · M.P.P. Public Policy · Ph.D. Applied Physics</span>
+                            <button type="button" class="btn-text-action open-program-modal" data-program="postgrad">
+                                Inspect Curriculum &amp; Tuition &rarr;
+                            </button>
+                        </div>
+                    </article>
                 </div>
             </div>
-            <div class="campus-col">
-                <img src="./assets/images/newyork.png" alt="">
-                <div class="layer">
-                    <h3>NEW YORK</h3>
+        </section>
+
+        <!-- Global Campuses Section -->
+        <section class="section-block campuses-section" id="campuses">
+            <div class="container">
+                <div class="section-header-split">
+                    <div>
+                        <p class="section-kicker">02 / Global Footprint</p>
+                        <h2 class="section-title">Three Interconnected World Campuses</h2>
+                        <p class="section-subtitle">
+                            Undergraduates and graduate fellows may spend up to two terms in residence at partner campuses without interruption to their degree track or financial aid package.
+                        </p>
+                    </div>
+                    <div class="campus-selector-bar" role="tablist" aria-label="Select campus to highlight">
+                        <button type="button" class="campus-tab active" data-campus="london">London</button>
+                        <button type="button" class="campus-tab" data-campus="newyork">New York</button>
+                        <button type="button" class="campus-tab" data-campus="washington">Washington, D.C.</button>
+                    </div>
+                </div>
+
+                <div class="campus-grid">
+                    <!-- London -->
+                    <article class="campus-card active-campus" data-campus-card="london">
+                        <div class="campus-image-wrap">
+                            <img src="./assets/images/london.png" alt="Eduford London Bloomsbury Campus architecture" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+                            <div class="campus-scrim">
+                                <p class="campus-coordinates">51.5202° N, 0.1280° W · Bloomsbury</p>
+                                <h3>London</h3>
+                            </div>
+                        </div>
+                        <div class="campus-details">
+                            <p class="campus-meta">Founded 1889 · 4,850 Students · Humanities, Law &amp; Architecture</p>
+                            <p class="campus-desc">
+                                Situated steps from the British Museum, our historic Bloomsbury quadrangle houses the School of Jurisprudence, the Courtauld Architectural Studio, and the European Economic Policy Institute.
+                            </p>
+                            <div class="campus-detail-actions">
+                                <span class="campus-next-tour">Next Open House: Oct 14, 2026</span>
+                                <button type="button" class="btn-campus-book" data-book-campus="London">Book London Tour &rarr;</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- New York -->
+                    <article class="campus-card" data-campus-card="newyork">
+                        <div class="campus-image-wrap">
+                            <img src="./assets/images/newyork.png" alt="Eduford New York Manhattan Campus skyline" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+                            <div class="campus-scrim">
+                                <p class="campus-coordinates">40.7359° N, 73.9911° W · Manhattan</p>
+                                <h3>New York</h3>
+                            </div>
+                        </div>
+                        <div class="campus-details">
+                            <p class="campus-meta">Established 1954 · 5,200 Students · Quantitative Finance, AI &amp; Design</p>
+                            <p class="campus-desc">
+                                Anchored in Lower Manhattan, the New York campus integrates computational laboratories, venture incubation studios, and quantitative economics centers with direct industry fellowships.
+                            </p>
+                            <div class="campus-detail-actions">
+                                <span class="campus-next-tour">Next Open House: Oct 18, 2026</span>
+                                <button type="button" class="btn-campus-book" data-book-campus="New York">Book New York Tour &rarr;</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Washington -->
+                    <article class="campus-card" data-campus-card="washington">
+                        <div class="campus-image-wrap">
+                            <img src="./assets/images/washington.png" alt="Eduford Washington D.C. Diplomatic Quarter Campus" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+                            <div class="campus-scrim">
+                                <p class="campus-coordinates">38.9072° N, 77.0369° W · Dupont Circle</p>
+                                <h3>Washington, D.C.</h3>
+                            </div>
+                        </div>
+                        <div class="campus-details">
+                            <p class="campus-meta">Established 1978 · 3,150 Students · Public Policy, Diplomacy &amp; Climate</p>
+                            <p class="campus-desc">
+                                Located along Embassy Row, our Washington campus connects scholars directly with multilateral institutions, congressional policy research bodies, and global environmental think tanks.
+                            </p>
+                            <div class="campus-detail-actions">
+                                <span class="campus-next-tour">Next Open House: Oct 22, 2026</span>
+                                <button type="button" class="btn-campus-book" data-book-campus="Washington, D.C.">Book D.C. Tour &rarr;</button>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
-            <div class="campus-col">
-                <img src="./assets/images/washington.png" alt="">
-                <div class="layer">
-                    <h3>WASHINGTON</h3>
+        </section>
+
+        <!-- Facilities & Campus Life Section -->
+        <section class="section-block facilities-section" id="facilities">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-kicker">03 / Scholarly Infrastructure</p>
+                    <h2 class="section-title">Archives, Laboratories &amp; Residential Commons</h2>
+                    <p class="section-subtitle">
+                        Designed to sustain focused intellectual work alongside vibrant collegiate camaraderie, every campus facility is accessible to all matriculated students.
+                    </p>
+                </div>
+
+                <div class="facilities-grid">
+                    <article class="facility-card">
+                        <div class="facility-img-box">
+                            <img src="./assets/images/library.png" alt="Bodleian-style reading room at the Eduford Central Library" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+                        </div>
+                        <div class="facility-body">
+                            <p class="facility-meta">1.8M+ Print Volumes · 24/7 Archival Access · Rare Manuscripts</p>
+                            <h3>The Sterling &amp; Vance Research Library</h3>
+                            <p>
+                                Housing over 1.8 million bound volumes, rare first-edition scientific folios, and 640 acoustic study carrels with dedicated archivist consultation for undergraduate thesis writers.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="facility-card">
+                        <div class="facility-img-box">
+                            <img src="./assets/images/basketball.png" alt="Varsity athletics courts and collegiate recreation center" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+                        </div>
+                        <div class="facility-body">
+                            <p class="facility-meta">24 Varsity &amp; Club Teams · Olympic Aquatic Center · Biomechanics Lab</p>
+                            <h3>Collegiate Athletics &amp; Fieldhouse Complex</h3>
+                            <p>
+                                Championship hardwood courts, an eight-lane indoor track, rowers’ ergometer bays, and sports physiology studios supporting both varsity competitors and daily intramural recreation.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="facility-card">
+                        <div class="facility-img-box">
+                            <img src="./assets/images/cafeteria.png" alt="Residential college dining hall and artisanal commons" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+                        </div>
+                        <div class="facility-body">
+                            <p class="facility-meta">Regional Farm Partnerships · High-Table Seminars · All-Day Espresso Bar</p>
+                            <h3>The Great Hall &amp; Culinary Commons</h3>
+                            <p>
+                                Seasonally curated menus sourced from regional organic farms, hosting daily communal meals and weekly evening High-Table dialogues between visiting laureates and students.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof & Outcomes Section (Claim-to-Proof Adjacency) -->
+        <section class="section-block outcomes-section" id="outcomes">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-kicker">04 / Empirical Outcomes &amp; Voices</p>
+                    <h2 class="section-title">Verified Graduate Impact &amp; Scholar Reflections</h2>
+                    <p class="section-subtitle">
+                        Independent career audits conducted six months post-commencement across the Class of 2025 cohort.
+                    </p>
+                </div>
+
+                <!-- Quantitative Proof Bar -->
+                <div class="proof-metrics-bar">
+                    <div class="proof-stat">
+                        <span class="proof-number">96.4%</span>
+                        <span class="proof-title">Career or Graduate Placement</span>
+                        <span class="proof-context">Within 6 months of graduation (n = 3,120)</span>
+                    </div>
+                    <div class="proof-stat">
+                        <span class="proof-number">$94,500</span>
+                        <span class="proof-title">Median Starting Compensation</span>
+                        <span class="proof-context">Class of 2025 Honours B.Sc. &amp; B.A. graduates</span>
+                    </div>
+                    <div class="proof-stat">
+                        <span class="proof-number">38</span>
+                        <span class="proof-title">Rhodes, Marshall &amp; Fulbright</span>
+                        <span class="proof-context">International fellowships awarded since 2021</span>
+                    </div>
+                    <div class="proof-stat">
+                        <span class="proof-number">118</span>
+                        <span class="proof-title">Sovereign Nations Represented</span>
+                        <span class="proof-context">34% international student body across 3 campuses</span>
+                    </div>
+                </div>
+
+                <!-- Attributable Testimonials with Before/Change/Outcome -->
+                <div class="testimonials-grid">
+                    <blockquote class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <p>
+                                “Entering Eduford with an interest in urban sustainability, the weekly 2-on-1 tutorials in London and my junior term at the New York computational lab transformed how I approach structural engineering. By senior spring, my thesis on low-carbon timber grids was co-published with my advisor and led directly to my fellowship at Foster + Partners.”
+                            </p>
+                        </div>
+                        <footer class="testimonial-author">
+                            <img src="./assets/images/user1.jpg" alt="Portrait of Christine Berkley" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+                            <div class="author-info">
+                                <strong>Christine Berkley</strong>
+                                <span>M.Sc. Computational Architecture ’25 · London &amp; New York</span>
+                                <span class="author-outcome">Now Structural Systems Fellow, Foster + Partners</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+
+                    <blockquote class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <p>
+                                “Coming from a public high school in Ohio on a full-need scholarship, I worried about navigating international policy circles. Spending my third year on the Washington, D.C. campus allowed me to brief Senate committee staffers while completing my econometrics honors thesis, culminating in my appointment at the World Bank.”
+                            </p>
+                        </div>
+                        <footer class="testimonial-author">
+                            <img src="./assets/images/user2.jpg" alt="Portrait of David Bayer" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+                            <div class="author-info">
+                                <strong>David Bayer</strong>
+                                <span>B.A. (Hons) International Economics ’24 · Washington, D.C.</span>
+                                <span class="author-outcome">Now Junior Economist, World Bank Group</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Admissions & Campus Visit Section (Replaces dead CTA) -->
+        <section class="section-block admissions-section" id="admissions">
+            <div class="container">
+                <div class="admissions-banner" style="background-image: linear-gradient(110deg, rgba(16, 14, 12, 0.92) 0%, rgba(28, 25, 23, 0.82) 55%, rgba(28, 25, 23, 0.65) 100%), url('./assets/images/banner2.jpg');">
+                    <div class="admissions-grid">
+                        <div class="admissions-copy">
+                            <p class="editorial-kicker">05 / Admissions &amp; Financial Aid</p>
+                            <h2>Begin Your Application or Request a Campus Visit</h2>
+                            <p class="admissions-lead">
+                                Connect with a regional admissions officer, receive a customized curriculum prospectus, or register for an upcoming in-person tour in London, New York, or Washington, D.C.
+                            </p>
+
+                            <div class="admissions-highlights">
+                                <div class="highlight-row">
+                                    <span class="highlight-date">Nov 15, 2026</span>
+                                    <span class="highlight-desc">Early Action &amp; Fellowship Priority Deadline</span>
+                                </div>
+                                <div class="highlight-row">
+                                    <span class="highlight-date">Jan 10, 2027</span>
+                                    <span class="highlight-desc">Regular Decision &amp; International Financial Aid</span>
+                                </div>
+                                <div class="highlight-row">
+                                    <span class="highlight-date">$68,400</span>
+                                    <span class="highlight-desc">Average Need-Based Scholarship Grant Award</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admissions-form-card">
+                            <h3>Prospective Scholar Inquiry</h3>
+                            <p class="form-subtext">Complete the form below for immediate digital prospectus access and tour scheduling.</p>
+
+                            <form id="admissionsForm" novalidate>
+                                <div class="form-group">
+                                    <label for="applicantName">Full Legal Name</label>
+                                    <input type="text" id="applicantName" name="applicantName" placeholder="e.g., Eleanor Vance" required>
+                                </div>
+
+                                <div class="form-row-2">
+                                    <div class="form-group">
+                                        <label for="applicantEmail">Academic or Personal Email</label>
+                                        <input type="email" id="applicantEmail" name="applicantEmail" placeholder="eleanor@domain.edu" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="entryTerm">Intended Entry Term</label>
+                                        <select id="entryTerm" name="entryTerm">
+                                            <option value="Fall 2026">Fall 2026</option>
+                                            <option value="Spring 2027">Spring 2027</option>
+                                            <option value="Fall 2027">Fall 2027</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row-2">
+                                    <div class="form-group">
+                                        <label for="programLevel">Degree Pathway</label>
+                                        <select id="programLevel" name="programLevel">
+                                            <option value="Honours Undergraduate (B.A. / B.Sc.)">Honours Undergraduate (B.A. / B.Sc.)</option>
+                                            <option value="Foundation &amp; Intermediate Year">Foundation &amp; Intermediate Year</option>
+                                            <option value="Postgraduate Master's / Ph.D.">Postgraduate Master's / Ph.D.</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="preferredCampus">Primary Campus</label>
+                                        <select id="preferredCampus" name="preferredCampus">
+                                            <option value="London">London (Bloomsbury)</option>
+                                            <option value="New York">New York (Manhattan)</option>
+                                            <option value="Washington, D.C.">Washington, D.C. (Dupont Circle)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <p class="form-error" id="formError" role="alert" hidden></p>
+
+                                <button type="submit" class="btn-submit-inquiry">Request Prospectus &amp; Register Interest</button>
+                            </form>
+
+                            <!-- Confirmation State -->
+                            <div id="formConfirmation" class="form-confirmation" hidden>
+                                <div class="confirmation-header">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <h4>Inquiry Registered with Admissions</h4>
+                                </div>
+                                <p id="confirmationMessage"></p>
+                                <button type="button" id="resetFormBtn" class="btn-text-action">Submit Another Inquiry &rarr;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Program Curriculum Inspector Modal -->
+    <div class="modal-backdrop" id="programModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+        <div class="modal-panel">
+            <div class="modal-header">
+                <div>
+                    <p class="program-meta" id="modalMeta"></p>
+                    <h3 id="modalTitle"></h3>
+                </div>
+                <button type="button" class="modal-close" id="closeModalBtn" aria-label="Close curriculum details">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="modalDescription" class="modal-lead"></p>
+                <div class="modal-columns">
+                    <div>
+                        <h4>Core Seminar Structure</h4>
+                        <ul id="modalModules" class="modal-list"></ul>
+                    </div>
+                    <div class="modal-tuition-box">
+                        <h4>Annual Tuition &amp; Aid</h4>
+                        <dl class="tuition-dl">
+                            <div>
+                                <dt>Academic Tuition</dt>
+                                <dd id="modalTuition"></dd>
+                            </div>
+                            <div>
+                                <dt>Need-Based Aid Coverage</dt>
+                                <dd>Up to 100% of Demonstrated Need</dd>
+                            </div>
+                            <div>
+                                <dt>Application Deadline</dt>
+                                <dd id="modalDeadline"></dd>
+                            </div>
+                        </dl>
+                        <button type="button" class="btn-submit-inquiry" id="modalApplyBtn">Apply for This Pathway</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
+    <!-- Quiet Institutional Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <a href="#top" class="footer-wordmark">Eduford University</a>
+                    <p>
+                        An independent global research university dedicated to rigorous humanistic and scientific inquiry across London, New York, and Washington, D.C.
+                    </p>
+                </div>
 
+                <div class="footer-links-col">
+                    <h4>Academic Divisions</h4>
+                    <ul>
+                        <li><a href="#programs">Honours Undergraduate College</a></li>
+                        <li><a href="#programs">Foundation Fellows Institute</a></li>
+                        <li><a href="#programs">Graduate School of Arts &amp; Sciences</a></li>
+                        <li><a href="#facilities">Sterling &amp; Vance Archives</a></li>
+                    </ul>
+                </div>
 
-    <!-- Facilities Section -->
-    <section class="facilities">
-        <h1>Our Facilities</h1>
-        <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</P>
-        <div class="facilities-col">
-            <img src="./assets/images/library.png" alt="">
-            <h3>World Class Library</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, cupiditate?</p>
-        </div>
-        <div class="facilities-col">
-            <img src="./assets/images/basketball.png" alt="">
-            <h3>Largest Play Ground</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, cupiditate?</p>
-        </div>
-        <div class="facilities-col">
-            <img src="./assets/images/cafeteria.png" alt="">
-            <h3>Tasty and Healthy Food</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, cupiditate?</p>
-        </div>
-    </section>
-
-
-
-
-    <!-- testimonials -->
-    <section class="testimonials">
-        <h1>What Our Student Says</h1>
-        <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</P>
-
-        <div class="row">
-            <div class="testimonial-col">
-                <img src="./assets/images/user1.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At amet dolorum illo ad, blanditiis magni!</p>
-                <h3>Christine Berkley</h3>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
+                <div class="footer-links-col">
+                    <h4>Global Campuses</h4>
+                    <ul>
+                        <li><a href="#campuses">London · Gower &amp; Bloomsbury</a></li>
+                        <li><a href="#campuses">New York · Lower Manhattan</a></li>
+                        <li><a href="#campuses">Washington · Dupont Circle</a></li>
+                        <li><a href="#admissions">Admissions &amp; Financial Aid</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="testimonial-col">
-                <img src="./assets/images/user2.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At amet dolorum illo ad, blanditiis magni!</p>
-                <h3>Devid Bayer</h3>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Eduford University Board of Trustees. Accredited Institutional Charter.</p>
+                <div class="footer-socials" aria-label="Institutional social channels">
+                    <a href="#admissions" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#admissions" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#admissions" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#admissions" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
             </div>
         </div>
-    </section>
+    </footer>
 
-
-
-    <!-- call to action section -->
-    <section class="cta">
-        <h1>Enroll For Our Various Online Courses<br> Anywhere From The World</h1>
-        <a href="" class="hero-btn">CONTACT US</a>
-    </section>
-
-
-    <!-- Footer -->
-    <section class="footer">
-        <h4>About Us</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>A quas optio nostrum eligendi repellat rem?</p>
-
-        <div class="icons">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-linkedin"></i>
-        </div>
-        <p>Made with <i class="fa-solid fa-heart"></i> Easy Tutorials</p>
-    </section>
-
-
-    <!-- js file link -->
+    <!-- JS File Link -->
     <script src="./assets/js/javascript.js"></script>
 </body>
 
